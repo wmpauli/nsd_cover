@@ -29,4 +29,4 @@ tmp_data = tmp_data_flat.reshape(tmp_data.shape)
 
 # save file
 out_nii = nib.Nifti1Image(tmp_data, tmp.affine)
-out_nii.to_filename('binary_brain.nii.gz')
+out_nii.to_filename('dope_segmentation.nii.gz')

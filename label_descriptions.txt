@@ -1,0 +1,35 @@
+################################################
+# ITK-SnAP Label Description File
+# File format: 
+# IDX   -R-  -G-  -B-  -A--  VIS MSH  LABEL
+# Fields: 
+#    IDX:   Zero-based index 
+#    -R-:   Red color component (0..255)
+#    -G-:   Green color component (0..255)
+#    -B-:   Blue color component (0..255)
+#    -A-:   Label transparency (0.00 .. 1.00)
+#    VIS:   Label visibility (0 or 1)
+#    IDX:   Label mesh visibility (0 or 1)
+#  LABEL:   Label description 
+################################################
+    0     0    0    0        0  0  0    "Clear Label"
+    1    99   99   99        1  1  0    "Label 1"
+    2   144  144  144        1  1  1    "Label 2"
+    3   181  181  181     0.39  1  1    "Label 3"
+    4   255  119    0        1  1  1    "Label 4"
+    5   255   85    0        1  1  1    "Label 5"
+    6   255  173  138        1  1  1    "Label 6"
+    7   255  158   47        1  1  1    "Label 7"
+    8    54  205    0        1  1  1    "Label 8"
+    9    62  205  162        1  1  1    "Label 9"
+   10   140  210  204        1  1  1    "Label 10"
+   11   102  155  205        1  1  1    "Label 11"
+   12    11   76  255        1  1  1    "Label 12"
+   13     0  139  139        1  1  1    "Label 13"
+   14    46  139   87        1  1  1    "Label 14"
+   15   255  228  225        1  1  1    "Label 15"
+   16   106   90  205        1  1  1    "Label 16"
+   17   129  169  255        1  1  1    "Label 17"
+   18   122  135  233        1  1  1    "Label 18"
+   19   129  148  255        1  1  1    "Label 19"
+  100   176  224  230        1  1  1    "Label 100"
