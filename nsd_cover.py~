@@ -1,0 +1,31 @@
+import nibabel as nib
+import numpy as np
+
+tmp_filename = '/home/pauli/Development/CIT_DeepBrain_Atlas/+Release+/CIT168_Amygdala_v1.0.3/CIT168_700um/CIT168_T1w_700um_seg.nii.gz'
+det_atlas_filename = '/home/pauli/Downloads/det_atlas_bilateral.nii.gz'
+
+tmp = nib.load(tmp_filename)
+tmp_data = tmp.get_data()
+
+tmp_bin = tmp_data # (tmp_data > 1).astype('<f4')
+
+tmp_bin[:,140:,:] = 0
+
+det_atlas_nii = nib.load(det_atlas_filename)
+det_atlas = det_atlas_nii.get_data()
+det_atlas[99:,141:,:] = 0
+#idx = np.where(det_atlas == 1)
+#left = np.where(idx[0] > 99)[0]
+#idx[0] = idx[0][left]
+#det_atlas[idx[0], idx[1], idx[2]] = 0
+
+
+det_atlas_flat = det_atlas.flatten() 
+idx = np.where(det_atlas_flat > 0)[0]
+
+tmp_bin_flat = tmp_bin.flatten()
+tmp_bin_flat[idx] = det_atlas_flat[idx] + 3
+tmp_bin = tmp_bin_flat.reshape(tmp_bin.shape)
+
+out_nii = nib.Nifti1Image(tmp_bin, tmp.affine)
+out_nii.to_filename('binary_brain.nii.gz')
